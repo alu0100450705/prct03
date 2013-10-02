@@ -1,3 +1,33 @@
+17
+
+1.9.3-p448 :001 > "Hola Mundo"
+ => "Hola Mundo"
+1.9.3-p448 :002 > puts 'Hola Mundo'
+Hola Mundo
+ => nil 
+
+21
+
+1.9.3-p448 :003 > "\t\n"
+ => "\t\n" 
+
+1.9.3-p448 :004 > '\t\n'
+ => "\\t\\n"
+
+22
+
+1.9.3-p448 :005 > %q{hello world\n}
+ => "hello world\\n" 
+1.9.3-p448 :007 >  %q{'a' 'b' 'c'}
+ => "'a' 'b' 'c'" 
+
+23
+
+1.9.3-p448 :008 > %Q{hello world\n}
+ => "hello world\n" 
+1.9.3-p448 :009 > %Q{"a" "b" "c"}
+ => "\"a\" \"b\" \"c\"" 
+
 24 
 
 1.9.3p194 :001 > a = 4
@@ -206,9 +236,12 @@ TypeError: can't convert Fixnum into Array
  => false 
 1.9.3-p194 :080 > b.include? 8
  => true 
+
 1.9.3-p194 :081 > b.step(2) {|x| print "#{x} " }
 1 3 5 7 9  => 1...10 						????????
-1..3.to_a
+
+
+1.9.3-p194 :081 > 1..3.to_a
 NoMethodError: undefined method `to_a' for 3:Fixnum
 	from (irb):82
 
@@ -321,9 +354,11 @@ RubJava => nil
 
 52
 
+Lo que sucede es que en el momento que el intérprete llega al yield, se ejecuta el código dentro del bloque, y luego se retorna al método y como tiene 4 y 5 retorna esos valores.
 
 53
-1.9.3-p194 :186 > counts = Hash.new(0)
+ son dos maneras distintas de crear un hash una llamando al metodo new y otra con el {}
+1.9.3-p194 :186 > counts = Hash.new(0)  
  => {} 
 1.9.3-p194 :187 > counts = {}
  => {}
@@ -342,61 +377,4 @@ RubJava => nil
 2
 1
  => [:a, :b, :c] 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
